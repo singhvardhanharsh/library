@@ -1,0 +1,59 @@
+Here is step by step procedure to make projects
+
+First Day
+	First Step (Creating a project)
+	open powershell and hit command
+		1. mkdir harshit
+		2. cd harshit
+		3. django-admin startproject library
+		4. cd library
+ 	Second Step (Creating the catalog application)
+		type command in same powershell window
+		1. python manage.py startapp catalog
+ 	Third Step (Registering the catalog application)
+		Open project directory and navigate harshit/library/settings.py and find defination of Application definition and add ('catalog.apps.CatalogConfig',)
+
+
+ 				INSTALLED_APPS = [
+    			'django.contrib.admin',
+  			    'django.contrib.auth',
+    			'django.contrib.contenttypes',
+    			'django.contrib.sessions',
+    			'django.contrib.messages',
+    			'django.contrib.staticfiles',
+    			'catalog.apps.CatalogConfig', 
+				]
+Second Day
+	Second Step : Now we have to define database schema for web app. It includes Book, Author, Genere, Language, BookInstance etc as per the requirement.
+
+	1. Navigate to project folder i.e C:/harshit/library/catalog and describe model.py with database schema.
+	2. Then go to admin.py and import database
+	 i.e    from .models import Author, Genre, Book, BookInstance, Language  
+	   note : (we can make define admin.py more efficiently as done by me) 
+	3. Open powershell and hit command
+	   python manage.py makemigrations
+	   python manage.py migrate 
+	   note : (This will initiate database)
+
+
+	 
+	4. Now we have to create a super user( admin to  make changes in database)
+	 hit command in powershell in the same directory
+      python manage.py createsuperuser
+      (now enter your username, e-mail, password)
+    5. Now check you project by running the server
+      python manage.py runserver
+
+
+
+
+
+
+
+
+
+
+
+
+
+
